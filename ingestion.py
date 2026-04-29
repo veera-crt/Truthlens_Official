@@ -10,7 +10,8 @@ def get_trending_data():
         'skip_download': True,
     }
     videos = []
-    queries = ["viral news today", "trending topics past 24 hours", "viral videos this week", "breaking updates trending now", "viral news last 3 hours"]
+    queries = ["viral news past 3 hours", "breaking updates uploaded today", "trending topics this hour", "viral videos past 24 hours", "top news viral this week"]
+
 
     
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
