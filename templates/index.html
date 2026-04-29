@@ -1086,6 +1086,11 @@
               const randomVid = data[Math.floor(Math.random() * data.length)];
               const line = document.createElement('div');
               line.className = 'hacker-line';
+              line.style.cursor = 'pointer';
+              line.title = "Click to trace content";
+              line.onclick = () => {
+                window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(randomVid.title)}`, '_blank');
+              };
               line.textContent = `> [DETECTED] ${Number(randomVid.views).toLocaleString()} views | ${randomVid.title}`;
               logBox.appendChild(line);
               logBox.scrollTop = logBox.scrollHeight;
@@ -1095,7 +1100,8 @@
               }
             }
           }).catch(() => { });
-      }, 400);
+      }, 150);
+
 
     }
     startHackerStream();
